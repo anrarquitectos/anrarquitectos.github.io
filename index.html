@@ -341,11 +341,11 @@
                     <a href="#descarga-checklist" class="rec-btn">Descargar checklist →</a>
                 </div>
 
-                <!-- Tarjeta 2 — PRÓXIMAMENTE -->
-                <div class="rec-card rec-card--soon">
+                <!-- Tarjeta 2 — ACTIVA -->
+                <div class="rec-card rec-card--active">
                     <div class="rec-card-top">
                         <span class="rec-tag rec-tag--comercial">Comercial</span>
-                        <span class="rec-soon-label">Próximamente</span>
+                        <span class="rec-free">Gratis</span>
                     </div>
                     <h3 class="rec-card-title">Guía para proyectos de habilitación comercial</h3>
                     <p class="rec-card-desc">
@@ -353,7 +353,7 @@
                         oficina o espacio comercial: normativa, permisos, plazos
                         y errores frecuentes.
                     </p>
-                    <span class="rec-btn rec-btn--disabled">En preparación</span>
+                    <a href="#descarga-comercial" class="rec-btn">Descargar guía →</a>
                 </div>
 
                 <!-- Tarjeta 3 — PRÓXIMAMENTE -->
@@ -386,6 +386,25 @@
                 <!-- Formulario Brevo -->
                 <iframe
                     src="https://394e2348.sibforms.com/serve/MUIFAPrxysfDdlU2X0ut4vxsNrT_fOKySx4-VvyBDDUKO9xETNun2oRm-xwMaiaa5ytm58KEcG_W1Z3z3hkvDML2P4Z6UFZnLAlw_4qEXZPH3k1z-uWKHBr8KN3RTbSKzzfX6LP8iY784zt_-C6tfMoOSMr_lbDJ-RAqHWcGbkjvyciLs6Q2_VbiBMWoWVUV6hB6WNT9sS_QcNLidA=="
+                    frameborder="0"
+                    scrolling="auto"
+                    allowfullscreen>
+                </iframe>
+                <p class="rec-modal-legal">Sin spam. Te puedes dar de baja cuando quieras.</p>
+            </div>
+        </div>
+
+        <!-- Modal 2 — Guía habilitación comercial -->
+        <div class="rec-modal-overlay" id="comercial-modal">
+            <div class="rec-modal">
+                <button class="rec-modal-close" id="close-comercial-modal" aria-label="Cerrar">&#10005;</button>
+                <div class="rec-modal-header">
+                    <span class="rec-modal-kicker">Descarga gratuita</span>
+                    <h3 class="rec-modal-title">Guía para proyectos de habilitación comercial</h3>
+                    <p class="rec-modal-desc">Deja tu nombre y correo y te lo enviamos al instante.</p>
+                </div>
+                <iframe
+                    src="https://394e2348.sibforms.com/serve/MUIFAErwCu7ESUKhgPYzypiaCyihpYFAT96CK7qxhGKJ9Tk7_z9ONDlrQMPV-3zaAM3SLwFzVXLGXOvy41AHNxwpErdDBpfghKn6qsgH28gkgGNCmSJ_YWoIBTJ6UQLjIZErDhE4zixgAmZGEMUtdQXL5UMVVactTG5C-oGNO07y589xAxm7tyW5hCNuy4ZyifJ7YP942XAjEes7Kg=="
                     frameborder="0"
                     scrolling="auto"
                     allowfullscreen>
@@ -496,6 +515,32 @@
         const modal   = document.getElementById('descarga-modal');
         const trigger = document.querySelector('a[href="#descarga-checklist"]');
         const closer  = document.getElementById('close-modal');
+        if (!modal || !trigger) return;
+
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('is-open');
+            document.body.style.overflow = '';
+        };
+
+        closer.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    })();
+    // ── Modal comercial ──────────────────────────────────────────────────────
+    (function () {
+        const modal   = document.getElementById('comercial-modal');
+        const trigger = document.querySelector('a[href="#descarga-comercial"]');
+        const closer  = document.getElementById('close-comercial-modal');
         if (!modal || !trigger) return;
 
         trigger.addEventListener('click', (e) => {
