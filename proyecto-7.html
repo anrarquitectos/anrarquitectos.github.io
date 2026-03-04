@@ -61,6 +61,8 @@
         .img-caption { margin-top: 0.6rem; font-size: 0.75rem; color: var(--color-muted); letter-spacing: 0.05em; }
         .gallery-double-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
         .gallery-double-row:last-child { margin-bottom: 0; }
+        .gallery-triple-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .gallery-triple-row:last-child { margin-bottom: 0; }
         .project-nav { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--color-line); margin-top: clamp(3rem,6vw,6rem); }
         .project-nav-item { padding: 2.5rem 0; transition: color 0.2s; }
         .project-nav-item:last-child { border-left: 1px solid var(--color-line); padding-left: 2.5rem; }
@@ -75,6 +77,7 @@
             .spec-item:first-child { border-top: none; }
             .project-description { grid-template-columns: 1fr; gap: 1rem; }
             .gallery-double-row { grid-template-columns: 1fr; }
+            .gallery-triple-row { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
             .project-hero { min-height: 30vh; max-height: 50vh; }
@@ -112,7 +115,7 @@
                 <div class="spec-item"><div class="spec-label">Superficie</div><div class="spec-value">205 m²</div></div>
                 <div class="spec-item"><div class="spec-label">Ubicación</div><div class="spec-value">Santiago, Chile</div></div>
                 <div class="spec-item"><div class="spec-label">Estado</div><div class="spec-value">Ejecutado</div></div>
-                <div class="spec-item"><div class="spec-label">Mandante</div><div class="spec-value">Casa de la Memoria Sola Sierra</div></div>
+                <div class="spec-item"><div class="spec-label">Mandante</div><div class="spec-value">Ministerio de Justicia</div></div>
             </div>
         </div>
 
@@ -130,7 +133,7 @@
         <div class="project-gallery reveal">
             <div class="gallery-label">Imágenes</div>
 
-            <!-- Fila 1: cm2 y cm3 -->
+            <!-- Fila 1: cm2 y cm3 — 4:3 -->
             <div class="gallery-double-row">
                 <div>
                     <div class="gallery-img-wrapper" style="aspect-ratio: 4/3;">
@@ -146,7 +149,7 @@
                 </div>
             </div>
 
-            <!-- Fila 2: cm4 y cm5 -->
+            <!-- Fila 2: cm4 y cm5 — 4:3 -->
             <div class="gallery-double-row">
                 <div>
                     <div class="gallery-img-wrapper" style="aspect-ratio: 4/3;">
@@ -161,6 +164,45 @@
                     <p class="img-caption"></p>
                 </div>
             </div>
+
+            <!-- Fila 3: cm6 y cm7 — 4:3 -->
+            <div class="gallery-double-row">
+                <div>
+                    <div class="gallery-img-wrapper" style="aspect-ratio: 4/3;">
+                        <img src="images/cm6.jpg" alt="Casa de la Memoria - Vista 5">
+                    </div>
+                    <p class="img-caption"></p>
+                </div>
+                <div>
+                    <div class="gallery-img-wrapper" style="aspect-ratio: 4/3;">
+                        <img src="images/cm7.jpg" alt="Casa de la Memoria - Vista 6">
+                    </div>
+                    <p class="img-caption"></p>
+                </div>
+            </div>
+
+            <!-- Fila 4: cm8, cm9 y cm10 — 3:4 -->
+            <div class="gallery-triple-row">
+                <div>
+                    <div class="gallery-img-wrapper" style="aspect-ratio: 3/4;">
+                        <img src="images/cm8.jpg" alt="Casa de la Memoria - Vista 7">
+                    </div>
+                    <p class="img-caption"></p>
+                </div>
+                <div>
+                    <div class="gallery-img-wrapper" style="aspect-ratio: 3/4;">
+                        <img src="images/cm9.jpg" alt="Casa de la Memoria - Vista 8">
+                    </div>
+                    <p class="img-caption"></p>
+                </div>
+                <div>
+                    <div class="gallery-img-wrapper" style="aspect-ratio: 3/4;">
+                        <img src="images/cm10.jpg" alt="Casa de la Memoria - Vista 9">
+                    </div>
+                    <p class="img-caption"></p>
+                </div>
+            </div>
+
         </div>
 
         <!-- Navegación entre proyectos -->
